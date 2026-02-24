@@ -24,18 +24,19 @@
         }
     </script>
     <style>
+        /* Float WA */
         .float-wa {
             position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
+            width: 55px;
+            height: 55px;
+            bottom: 30px;
+            right: 30px;
             background-color: #25d366;
             color: #FFF;
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
             z-index: 100;
             display: flex;
             align-items: center;
@@ -45,22 +46,27 @@
         }
 
         .float-wa:hover {
-            background-color: #1ebd5a;
             transform: scale(1.1);
+            background-color: #1ebd5a;
+        }
+
+        /* Float Top */
+        html {
+            scroll-behavior: smooth;
         }
 
         .float-top {
             position: fixed;
             width: 45px;
             height: 45px;
-            bottom: 110px;
-            right: 48px;
-            background-color: #facc15;
+            bottom: 95px;
+            right: 35px;
+            background-color: #00d2ff;
             color: #fff;
             border-radius: 50%;
             text-align: center;
             font-size: 20px;
-            box-shadow: 2px 2px 3px #999;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
             z-index: 100;
             display: flex;
             align-items: center;
@@ -69,7 +75,11 @@
             transition: all 0.3s ease;
             opacity: 0;
             pointer-events: none;
-            transform: translateY(20px);
+        }
+
+        .float-top:hover {
+            transform: scale(1.1);
+            background-color: #00b8e6;
         }
     </style>
 </head>
@@ -88,9 +98,8 @@
                 <a href="index.html" class="text-primary">Home</a>
                 <a href="index.html#activities" class="hover:text-primary transition">Activities</a>
                 <a href="blog.html" class="text-primary transition">Blog</a>
-                <a href="#"
-                    class="bg-primary text-slate-900 px-6 py-2.5 rounded-full hover:bg-cyan-400 transition shadow">Book
-                    Now</a>
+                <a href="https://wa.me/6282211221909" target="_blank" rel="noopener noreferrer"
+                    class="bg-primary text-slate-900 px-6 py-2.5 rounded-full font-bold hover:bg-cyan-400 transition shadow">Kontak</a>
             </div>
             <button class="md:hidden text-2xl text-slate-700 hover:text-primary transition"><i
                     class="fa-solid fa-bars"></i></button>
@@ -106,11 +115,11 @@
 
             <!-- Search Bar -->
             <div class="max-w-xl mx-auto relative">
-                <input type="text" placeholder="Cari artikel, tips, panduan..."
+                <input type="text" id="searchInput" placeholder="Cari artikel, tips, panduan..."
                     class="w-full pl-12 pr-24 py-4 rounded-full border border-gray-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary shadow-sm bg-gray-50 text-sm">
                 <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                <button
-                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary text-slate-900 px-6 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition">Cari</button>
+                <button id="searchBtn"
+                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary text-slate-900 px-6 py-2 rounded-full font-bold text-sm hover:bg-cyan-400 transition">Cari</button>
             </div>
         </div>
     </header>
@@ -129,11 +138,11 @@
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <h2 class="text-xl font-bold text-slate-900 mb-4 line-clamp-2 hover:text-primary transition">
-                        <a href="blog-article.html">Paket Team Building Batu Malang: Sensasi Tim Solid Tanpa Kuras
-                            Budget</a>
+                        <a href="tempat-rafting-terbaik-di-batu-malang.html">Tempat Rafting Terbaik di Batu Malang:
+                            Liburan Seru Memacu Adrenalin Terlengkap 2026</a>
                     </h2>
                     <div class="mt-auto">
-                        <a href="blog-article.html"
+                        <a href="tempat-rafting-terbaik-di-batu-malang.html"
                             class="text-primary font-bold text-sm flex items-center gap-2 group/btn">
                             Baca Selengkapnya <i
                                 class="fa-solid fa-arrow-right-long text-xs group-hover/btn:translate-x-2 transition-transform"></i>
@@ -151,11 +160,11 @@
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <h2 class="text-xl font-bold text-slate-900 mb-4 line-clamp-2 hover:text-primary transition">
-                        <a href="blog-article.html">Panduan Memilih Vendor Outbound Malang untuk Gathering Kantor yang
-                            Tepat</a>
+                        <a href="5-tempat-rafting-terbaik-di-batu-malang.html">5 Tempat Rafting Terbaik di Batu Malang
+                            yang Wajib Dicoba Tahun 2026</a>
                     </h2>
                     <div class="mt-auto">
-                        <a href="blog-article.html"
+                        <a href="5-tempat-rafting-terbaik-di-batu-malang.html"
                             class="text-primary font-bold text-sm flex items-center gap-2 group/btn">
                             Baca Selengkapnya <i
                                 class="fa-solid fa-arrow-right-long text-xs group-hover/btn:translate-x-2 transition-transform"></i>
@@ -173,11 +182,11 @@
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <h2 class="text-xl font-bold text-slate-900 mb-4 line-clamp-2 hover:text-primary transition">
-                        <a href="blog-article.html">Menjelajah Arus Menantang: Sensasi Arung Jeram Terbaik di Kota
-                            Wisata</a>
+                        <a href="uji-adrenalin-di-sungai-brantas-tempat-rafting-terbaik-di-batu-malang.html">Uji
+                            Adrenalin di Sungai Brantas: Ulasan Lengkap Tempat Rafting Terbaik di Batu Malang</a>
                     </h2>
                     <div class="mt-auto">
-                        <a href="blog-article.html"
+                        <a href="uji-adrenalin-di-sungai-brantas-tempat-rafting-terbaik-di-batu-malang.html"
                             class="text-primary font-bold text-sm flex items-center gap-2 group/btn">
                             Baca Selengkapnya <i
                                 class="fa-solid fa-arrow-right-long text-xs group-hover/btn:translate-x-2 transition-transform"></i>
@@ -195,11 +204,11 @@
                 </div>
                 <div class="p-8 flex flex-col flex-grow">
                     <h2 class="text-xl font-bold text-slate-900 mb-4 line-clamp-2 hover:text-primary transition">
-                        <a href="blog-article.html">Paket Wisata Edukatif & Liburan Seru Keluarga di Kawasan
-                            Pegunungan</a>
+                        <a href="rekomendasi-tempat-rafting-terbaik-di-batu-malang.html">Rekomendasi Tempat Rafting
+                            Terbaik di Batu Malang: Cocok untuk Liburan Keluarga dan Outbound Kantoran</a>
                     </h2>
                     <div class="mt-auto">
-                        <a href="blog-article.html"
+                        <a href="rekomendasi-tempat-rafting-terbaik-di-batu-malang.html"
                             class="text-primary font-bold text-sm flex items-center gap-2 group/btn">
                             Baca Selengkapnya <i
                                 class="fa-solid fa-arrow-right-long text-xs group-hover/btn:translate-x-2 transition-transform"></i>
@@ -210,24 +219,25 @@
 
             <!-- Blog Card 5 (Full width layout example like the bottom of the user's image) -->
             <article
-                class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_15px_rgba(0,0,0,0.06)] border border-gray-100 md:col-span-2 group">
-                <div class="grid md:grid-cols-2">
-                    <div class="relative overflow-hidden h-64 md:h-full min-h-[300px]">
+                class="bg-white rounded-2xl overflow-hidden shadow-[0_2px_15px_rgba(0,0,0,0.06)] border border-gray-100 md:col-span-2 group flex flex-col">
+                <div class="flex flex-col md:flex-row flex-grow">
+                    <div class="relative overflow-hidden h-64 md:h-auto md:w-5/12 min-h-[200px]">
                         <img src="img/Slide101.webp" alt="Offroad"
-                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
-                    <div class="p-8 md:p-12 flex flex-col justify-center">
-                        <h2 class="text-2xl font-bold text-slate-900 mb-4 hover:text-primary transition">
-                            <a href="blog-article.html">Sewa Jeep Fun Offroad Batu Malang: Panduan Lengkap Harga Rute &
-                                Tips Pemacu Adrenalin</a>
+                    <div class="p-6 md:p-8 flex flex-col justify-center md:w-7/12">
+                        <h2
+                            class="text-xl md:text-2xl font-bold text-slate-900 mb-3 hover:text-primary transition leading-snug">
+                            <a href="daftar-harga-dan-fasilitas-tempat-rafting-terbaik-di-batu-malang.html">Daftar Harga
+                                dan Fasilitas Lengkap dari Tempat Rafting Terbaik di Batu Malang (Update 2026)</a>
                         </h2>
-                        <p class="text-gray-500 mb-8 line-clamp-3">
-                            Pacu adrenalin Anda dengan menelusuri jalur ekstrem menantang di dataran tinggi. Pengalaman
-                            tak terlupakan bersama driver profesional kami membelah hutan pinus dan trek berlumpur.
+                        <p class="text-gray-500 mb-6 text-sm md:text-base leading-relaxed line-clamp-3">
+                            Informasi terupdate memuat daftar harga tiket all-in dan rincian fasilitas lengkap dari
+                            provider rafting wahana arung jeram terbaik di area Kota Wisata Batu.
                         </p>
                         <div class="mt-auto">
-                            <a href="blog-article.html"
-                                class="text-primary font-bold text-sm flex items-center gap-2 group/btn">
+                            <a href="daftar-harga-dan-fasilitas-tempat-rafting-terbaik-di-batu-malang.html"
+                                class="text-primary font-bold text-sm flex items-center gap-2 group/btn inline-flex">
                                 Baca Selengkapnya <i
                                     class="fa-solid fa-arrow-right-long text-xs group-hover/btn:translate-x-2 transition-transform"></i>
                             </a>
@@ -364,6 +374,28 @@
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
+
+        // Search filter logic
+        const searchInput = document.getElementById("searchInput");
+        const searchBtn = document.getElementById("searchBtn");
+        const articles = document.querySelectorAll("main article");
+
+        function filterArticles() {
+            const query = searchInput.value.toLowerCase().trim();
+            articles.forEach(article => {
+                const title = article.querySelector("h2") ? article.querySelector("h2").textContent.toLowerCase() : "";
+                const snippet = article.querySelector("p") ? article.querySelector("p").textContent.toLowerCase() : "";
+
+                if (title.includes(query) || snippet.includes(query)) {
+                    article.style.display = "";
+                } else {
+                    article.style.display = "none";
+                }
+            });
+        }
+
+        searchBtn.addEventListener("click", filterArticles);
+        searchInput.addEventListener("keyup", filterArticles);
     </script>
 </body>
 
